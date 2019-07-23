@@ -1,4 +1,4 @@
-package com.objectpartners;
+package py.com.winner.testing.dtotester;
 
 import java.lang.reflect.Method;
 
