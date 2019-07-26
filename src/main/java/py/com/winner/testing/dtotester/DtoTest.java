@@ -1,7 +1,7 @@
 package py.com.winner.testing.dtotester;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -19,7 +19,7 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.function.Supplier;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
@@ -133,10 +133,10 @@ public abstract class DtoTest<T> {
 
         if (getter.getReturnType().isPrimitive()) {
             /* Calling assetEquals() here due to autoboxing of primitive to object type. */
-            assertEquals(fieldName + " is different", expected, getResult);
+            assertEquals(expected, getResult, fieldName + " is different");
         } else {
             /* This is a normal object. The object passed in should be the exactly same object we get back. */
-            assertSame(fieldName + " is different", expected, getResult);
+            assertSame(expected, getResult, fieldName + " is different");
         }
     }
 
